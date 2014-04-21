@@ -18,6 +18,17 @@ def pointDouble(p):
     yR = lam * (p.x - xR) - p.y
     return Point(xR, yR)
 
+def doubleAndAdd(d, p):
+    q = Point(0,0)
+    for i in list(bin(d)[2:])[::-1]:
+        if (i == '1'):
+            q = pointAddition(p, q)
+        p = pointDouble(p)
+    return q
+
+
+
+
 P = Point(1, (3 ** .5))
 Q = Point(2, (11 ** .5))
 print(pointAddition(P,Q).__unicode__())
